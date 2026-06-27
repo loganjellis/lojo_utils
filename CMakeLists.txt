@@ -25,7 +25,7 @@ function(add_c_library name)
 
 	add_library(${name} ${CLIB_SOURCES})
 
-	target_compile_definitions(${name} PRIVATE $<$<BOOL:${BUILD_SHARED_LIBS}>:LOJO_UTILS_EXPORTS>)
+	target_compile_definitions(${name} PRIVATE $<$<BOOL:${BUILD_SHARED_LIBS}>:LOJO_CORE_UTILS_EXPORTS LOJO_STR_UTILS_EXPORTS>)
 
 	target_include_directories(${name} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${CLIB_INCLUDE_DIR}>
 		$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
